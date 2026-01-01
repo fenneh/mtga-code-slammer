@@ -1,4 +1,4 @@
-# MTGA Code Slammer
+# mtga-code-slammer
 
 MTGA Code Slammer is an AutoHotkey script designed to automate the process of redeeming multiple Magic: The Gathering Arena codes. This script will loop through a predefined list of codes and input them into the game, saving you time and effort.
 
