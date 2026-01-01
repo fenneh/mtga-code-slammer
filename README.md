@@ -1,27 +1,20 @@
 # mtga-code-slammer
 
-MTGA Code Slammer is an AutoHotkey script designed to automate the process of redeeming multiple Magic: The Gathering Arena codes. This script will loop through a predefined list of codes and input them into the game, saving you time and effort.
+AutoHotkey script for bulk redeeming Magic: The Gathering Arena codes. Because entering 50 promo codes manually is nobody's idea of fun.
 
-## Features
+## Requirements
 
-- Automatically inputs a list of Magic: The Gathering Arena codes.
-- Simulates mouse clicks and keyboard inputs to redeem codes.
-- Configurable hotkey to start the process.
-
-## Prerequisites
-
-- [AutoHotkey](https://www.autohotkey.com/) installed on your system.
+- [AutoHotkey](https://www.autohotkey.com/)
 
 ## Usage
 
-1. Clone this repository to your local machine.
-2. Open the `mtga-code-slammer.ahk` file in a text editor.
-3. Modify the `strings` array to include your own list of Magic: The Gathering Arena codes.
-4. Run the `mtga-code-slammer.ahk` script by double-clicking it.
-5. Open Magic: The Gathering Arena and navigate to the code redemption screen (The store).
-6. Click into the text entry field in the top right.
-7. Press `Ctrl+J` to start the process.
+1. Edit `mtga-code-slammer.ahk` and add your codes to the `strings` array
+2. Run the script
+3. Open MTGA, go to Store, click the code redemption field
+4. Press `Ctrl+J` to start
 
-### Lazy Usage
+The script handles the clicking and typing. You handle the free cards.
 
-If you don't want to compile the .exe yourself you can download it from this repo. 
+## Lazy Option
+
+Pre-compiled .exe available in the repo if you don't want to install AutoHotkey.
