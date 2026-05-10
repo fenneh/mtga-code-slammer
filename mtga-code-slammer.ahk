@@ -1,6 +1,5 @@
 #SingleInstance Force
 
-; Define the array of codes - alphabetically sorted with duplicates removed
 strings := []
 strings.Insert("2005")
 strings.Insert("AlquistProft")
@@ -83,31 +82,24 @@ strings.Insert("TryKaladesh")
 strings.Insert("WrittenInStone")
 strings.Insert("ZendikarLands")
 
-; Global variable to track if script should stop
 global shouldStop := false
 
-; Hotkey to stop the script
 ^Escape::
     shouldStop := true
     return
 
-; Function to check if MTGA is active
 IsMTGAActive() {
     return WinActive("ahk_exe MTGA.exe")
 }
 
-; Main hotkey to start the process
-^j::  ; Ctrl+J to trigger the process
-    shouldStop := false  ; Reset the stop flag when starting
-    
-    ; Display start message with total number of codes
+^j::
+    shouldStop := false
+
     totalCodes := strings.MaxIndex()
     MsgBox, 0, MTGA Code Slammer, Starting code entry process for %totalCodes% codes.`n`nPress Ctrl + Escape at any time to stop the script.`n`nPress Enter to begin...
 
-    ; Loop through each string in the array
     Loop, % strings.MaxIndex()
     {
-        ; Check if stop was requested or MTGA lost focus
         if (shouldStop || !IsMTGAActive())
         {
             if (!IsMTGAActive())
@@ -117,28 +109,13 @@ IsMTGAActive() {
             return
         }
 
-        ; Get the current string
         currentString := strings[A_Index]
-
-        ; Perform a left click
         Click
-
-        ; Wait for a short period to ensure the click is registered
         Sleep, 100
-
-        ; Send the current string (paste the value)
         SendInput, %currentString%
-
-        ; Press Enter
         SendInput, {Enter}
-
-        ; Wait for 1 second before proceeding to the next action
         Sleep, 1000
-
-        ; Press Escape
         SendInput, {Escape}
-
-        ; Wait for 1 second before proceeding to the next string
         Sleep, 1000
     }
 
