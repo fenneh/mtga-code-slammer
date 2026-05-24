@@ -25,6 +25,8 @@ strings := [
     "FunIsntFree",
     "GAMEKNIGHTS",
     "GOLDENCOMMUNITY",
+    "Golgari",
+    "Greenblack",
     "HappySwamp",
     "impeccable",
     "InformationIsPower",
