@@ -4,7 +4,7 @@ AutoHotkey script for bulk redeeming Magic: The Gathering Arena codes. Because e
 
 ## Requirements
 
-- [AutoHotkey](https://www.autohotkey.com/)
+- [AutoHotkey v1](https://www.autohotkey.com/) - the script uses v1 syntax, not compatible with v2
 
 ## Usage
 
