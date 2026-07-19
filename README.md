@@ -15,6 +15,8 @@ AutoHotkey script for bulk redeeming Magic: The Gathering Arena codes. Because e
 
 The script handles the clicking and typing. You handle the free cards.
 
-## Lazy Option
+Press `Ctrl+Escape` at any time to stop. The script also stops automatically if MTGA loses focus.
 
-Pre-compiled .exe available in the repo if you don't want to install AutoHotkey.
+## Lazy option
+
+Pre-compiled .exe in the repo if you don't want to install AutoHotkey. Note it may not include codes added after the last compile -- use the .ahk if you want everything.
