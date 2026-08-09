@@ -31,12 +31,18 @@ def main():
         else:
             seen[key] = code
 
+    lowered = [c.lower() for c in codes]
+    if lowered != sorted(lowered):
+        for i in range(1, len(codes)):
+            if lowered[i] < lowered[i - 1]:
+                errors.append(f"out of order (case-insensitive): {codes[i - 1]!r} before {codes[i]!r}")
+
     if errors:
         for e in errors:
             print(e, file=sys.stderr)
         sys.exit(1)
 
-    print(f"{len(codes)} codes, no duplicates")
+    print(f"{len(codes)} codes, no duplicates, alphabetically sorted")
 
 
 if __name__ == "__main__":
