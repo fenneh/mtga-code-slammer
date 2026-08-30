@@ -13,9 +13,7 @@ def extract_codes(text):
     return re.findall(r'"([^"]*)"', match.group(1))
 
 
-def main():
-    codes = extract_codes(open(PATH).read())
-
+def validate_codes(codes):
     errors = []
     if not codes:
         errors.append("no codes found")
@@ -36,6 +34,13 @@ def main():
         for i in range(1, len(codes)):
             if lowered[i] < lowered[i - 1]:
                 errors.append(f"out of order (case-insensitive): {codes[i - 1]!r} before {codes[i]!r}")
+
+    return errors
+
+
+def main():
+    codes = extract_codes(open(PATH).read())
+    errors = validate_codes(codes)
 
     if errors:
         for e in errors:
