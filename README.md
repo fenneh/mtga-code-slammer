@@ -1,5 +1,8 @@
 # mtga-code-slammer
 
+[![ci](https://github.com/fenneh/mtga-code-slammer/actions/workflows/ci.yml/badge.svg)](https://github.com/fenneh/mtga-code-slammer/actions/workflows/ci.yml)
+[![license](https://img.shields.io/github/license/fenneh/mtga-code-slammer)](LICENSE)
+
 AutoHotkey script for bulk redeeming Magic: The Gathering Arena codes. Because entering 50 promo codes manually is nobody's idea of fun.
 
 ## Requirements
