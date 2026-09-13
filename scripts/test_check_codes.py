@@ -43,6 +43,14 @@ class ValidateCodesTests(unittest.TestCase):
         errors = check_codes.validate_codes(["beta", "Alpha"])
         self.assertTrue(any("out of order" in e for e in errors))
 
+    def test_special_ahk_characters_detected(self):
+        errors = check_codes.validate_codes(["Alpha", "Bad!Code"])
+        self.assertTrue(any("special keys" in e for e in errors))
+
+    def test_alphanumeric_codes_have_no_special_char_error(self):
+        errors = check_codes.validate_codes(["Alpha123", "Beta"])
+        self.assertFalse(any("special keys" in e for e in errors))
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -23,6 +23,8 @@ def validate_codes(codes):
         if not code.strip():
             errors.append("empty code entry")
             continue
+        if not re.fullmatch(r"[A-Za-z0-9]+", code):
+            errors.append(f"code has characters AHK SendInput would treat as special keys: {code!r}")
         key = code.lower()
         if key in seen:
             errors.append(f"duplicate code (case-insensitive): {seen[key]!r} and {code!r}")
