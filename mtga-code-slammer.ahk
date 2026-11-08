@@ -146,6 +146,12 @@ IsMTGAActive() {
         currentString := strings[A_Index]
         Click
         Sleep, 100
+        ; Click activates the window under the pointer, so re-check before typing
+        if (!IsMTGAActive())
+        {
+            MsgBox, Script stopped - MTGA window lost focus
+            return
+        }
         SendInput, %currentString%
         SendInput, {Enter}
         Sleep, 1000
